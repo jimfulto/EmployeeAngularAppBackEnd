@@ -17,7 +17,7 @@ import java.util.*;
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
-@NoArgsConstructor(force = true)
+//@NoArgsConstructor(force = true)
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;

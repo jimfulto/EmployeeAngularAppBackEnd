@@ -1,6 +1,5 @@
 package com.galvanize.employeedb.Controllers;
 
-import com.galvanize.employeedb.Entities.Employee;
 import com.galvanize.employeedb.Entities.Job;
 import com.galvanize.employeedb.Services.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
