@@ -2,12 +2,14 @@ package com.galvanize.employeedb.Controllers;
 
 import com.galvanize.employeedb.Entities.Job;
 import com.galvanize.employeedb.Services.JobService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@Api(value="Job Controller", description="Operations to manipulate Employees Job data")
 @RestController
 @RequestMapping("/job")
 public class JobController {
