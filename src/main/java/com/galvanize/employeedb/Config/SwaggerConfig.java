@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -28,6 +29,18 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
      * In the code, the RequestHandlerSelectors.basePackage predicate matches the com.galvanize.employeedb.Controllers base package to filter the API.
      * The regex parameter passed to paths() acts as an additional filter to generate documentation only for the path starting with /product.
      *
+     *
+     *
+     * Docket, Springfox’s, primary api configuration mechanism is initialized for swagger specification 2.0
+     *
+     * select() returns an instance of ApiSelectorBuilder to give fine grained control over the endpoints exposed via swagger.
+     *
+     * apis() allows selection of RequestHandler's using a predicate. The example here uses an any predicate (default). Out of the box predicates provided are any, none, withClassAnnotation, withMethodAnnotation and basePackage.
+     *
+     * paths() allows selection of Path's using a predicate. The example here uses an any predicate (default). Out of the box we provide predicates for regex, ant, any, none.
+     *
+     * The selector needs to be built after configuring the api and path selectors.
+     *
      * @return
      */
     @Bean
@@ -35,7 +48,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.galvanize.employeedb.Controllers"))
-                .paths(regex("/employee.*"))
+                //  .paths(regex("/employee.*")) // This will call only specific controller in Swagger Doc.
+                .paths(PathSelectors.any()) //This will pick all controllers in the above mentioned package.
                 .build()
                 .apiInfo(metaData());
 
