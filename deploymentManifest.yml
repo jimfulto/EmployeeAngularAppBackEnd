@@ -1,0 +1,33 @@
+---
+applications:
+- name: EmployeeAngularAppBackEnd
+  memory: 768M
+  instances: 1
+  random-route: true
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
+
+
+
+#---
+#inherit: ../../../shared-teamb/teamb-config-server-properties-esp-dev.yml
+#memory: 2048M
+#timeout: 600
+#buildpack: java_buildpack_offline
+#services:
+#              -appdynamics-service
+#              -teamb-config-bus
+#              -team-b-logstash-service
+#              -team-b-redis
+#host: numbermanagement-service-dev
+#instances: 1
+#health-check-type: http
+#health-check-http-endpoint: /initialized
+#env:
+#     JAVA_OPTS: >-
+#     -Dappdynamics.agent.applicationName=ESP-v4-Dev
+#     -Dappdynamics.agent.tierName=numbermanagement-service-dev
+#     -Dappdynamics.http.proxyHost=appd-proxy-lower.ula.comcast.net
+#     -Dappdynamics.http.proxyPort=3128 -Duser.timezone=America/New_York
+#      JBP_CONFIG_JMX: '{enabled: true}'
+#      ITRC_APP_ID: '10070'
