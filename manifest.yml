@@ -7,6 +7,9 @@ applications:
     #  buildpacks: https://github.com/cloudfoundry/java-buildpack.git
     health-check-type: none
     buildpack: java_buildpack
+    path: build/libs/employeedb-0.0.1-SNAPSHOT.jar
+    services:
+      - mysqlDB
 
 
 
