@@ -17,6 +17,7 @@ import java.util.*;
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
+@Table(name = "employee")
 //@NoArgsConstructor(force = true)
 public class Employee implements Serializable {
 

@@ -16,6 +16,7 @@ import javax.persistence.*;
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
+@Table(name = "job")
 //@NoArgsConstructor(force = true)
 public class Job implements Serializable {
 
